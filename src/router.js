@@ -4,8 +4,12 @@ import Home from './views/Home.vue';
 import Signup from "./views/Signup.vue";
 import Login from "./views/Login.vue";
 import Logout from "./views/Logout.vue";
+import Expenses from "./views/Expenses.vue";
+import ExpensesNew from "./views/ExpensesNew.vue";
 
-Vue.use(Router)
+
+
+Vue.use(Router);
 
 export default new Router({
   mode: 'history',
@@ -14,6 +18,10 @@ export default new Router({
     { path: '/',name: 'home', component: Home},
     { path: "/signup", name: "signup", component: Signup },
     { path: "/login", name: "login", component: Login },
-    { path: "/logout", name: "logout", component: Logout }
+    { path: "/logout", name: "logout", component: Logout },
+    { path: "/expenses/new", name: 'expenses-new', component: ExpensesNew},
+    { path: "/expenses", name: 'expenses', compnent: Expenses}
+    
+
   ]
 })
