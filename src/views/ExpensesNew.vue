@@ -1,6 +1,7 @@
 <template>
   <div class="container">
     <h1>New Expense</h1>
+
      <ul>
       <li v-for="error in errors">
         {{ error }}
@@ -23,14 +24,16 @@
 
   </div>
 
-
       <button v-on:click="createExpense()">Create Expense</button>
     </div>
+
+
   </div>
 </template>
 
 <script>
 import axios from "axios";
+
 export default {
   data: function() {
     return {
@@ -47,15 +50,12 @@ export default {
   created: function() {
     axios.get("/api/expenses").then(response => {
       this.expenses = response.data;
-    });
+
     axios.get("/api/users").then(response => {
       this.user = response.data;
     });
   },
   methods: {
-    // createCat: function(cat) {
-    //   this.newExpenseCategory = cat
-    // };
 
     createExpense: function() {
       var params = {
