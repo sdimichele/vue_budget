@@ -14,11 +14,11 @@
 
   <div class="dropdown">
     <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        Dropdown button
+        {{buttonName}}
     </button>
       <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
         <div v-for="category in user.categories">
-          <a v-on:click="newExpenseCategoryId = category.id" class="dropdown-item" href="#">{{category.name}}</a>
+          <a v-on:click="onCategoryClick(category.id, category.name)" class="dropdown-item" href="#">{{category.name}}</a>
         </div>
       </div>
 
@@ -38,6 +38,7 @@ export default {
   data: function() {
     return {
       expenses: [],
+      buttonName: "Category",
       currentExpense: {},
       user: {},
       newExpenseName: "",
@@ -56,6 +57,12 @@ export default {
     });
   },
   methods: {
+
+    onCategoryClick: function(id, name) {
+      this.newExpenseCategoryId = id;
+      this.buttonName = name;
+    },
+
     createExpense: function() {
       var params = {
         name: this.newExpenseName,
