@@ -50,13 +50,12 @@ export default {
   created: function() {
     axios.get("/api/expenses").then(response => {
       this.expenses = response.data;
-
+    });
     axios.get("/api/users").then(response => {
       this.user = response.data;
     });
   },
   methods: {
-
     createExpense: function() {
       var params = {
         name: this.newExpenseName,
