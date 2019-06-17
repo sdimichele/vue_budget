@@ -20,7 +20,7 @@ export default new Router({
     { path: "/login", name: "login", component: Login },
     { path: "/logout", name: "logout", component: Logout },
     { path: "/expenses/new", name: 'expenses-new', component: ExpensesNew},
-    { path: "/expenses", name: 'expenses', compnent: Expenses}
+    { path: "/expenses", name: 'expenses', component: Expenses}
     
 
   ]
