@@ -5,6 +5,8 @@ import ExpensesIndex from './views/ExpensesIndex.vue';
 import Signup from "./views/Signup.vue";
 import Login from "./views/Login.vue";
 import Logout from "./views/Logout.vue";
+import CategoriesShow from './views/CategoriesShow.vue';
+
 
 Vue.use(Router)
 
@@ -16,6 +18,8 @@ export default new Router({
     { path: "/signup", name: "signup", component: Signup },
     { path: "/login", name: "login", component: Login },
     { path: "/logout", name: "logout", component: Logout },
-    { path: "/expenses", name: 'expenses-index', component: ExpensesIndex}
+    { path: "/expenses", name: 'expenses-index', component: ExpensesIndex},
+    { path: "/categories/:id", name: 'categories-show', component: CategoriesShow}
+
   ]
 })
